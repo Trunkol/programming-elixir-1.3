@@ -5,7 +5,7 @@ fizzbuzz = fn
 	[_, _, a] -> a 
 end
 
-fizzrem = fn n -> fizzbuzz.([rem(n, 3), rem(n, 5), n]) end
+fizzrem = fn n -> fizzbuzz.([rem(n, 3), rem(n, 5), n] ) end
 
 IO.puts fizzrem.(10)
 IO.puts fizzrem.(11)
