@@ -18,4 +18,35 @@ defmodule MyList do
     
     def sum2([]), do: 0
     def sum2([head | tail]), do: head + sum2(tail)
+
+    def reduce([], value, _), do: value
+    def reduce([ head | tail ], value, func) do
+      reduce(tail, func.(head, value), func)
+    end
+
+    def mapsum([], _), do: 0
+    def mapsum([ head | tail ], func) do
+      func.(head) + mapsum(tail, func)
+    end
+
+    def max(list) do
+      _max(list, nil)
+    end
+
+    defp _max([], current_max) do
+      current_max
+    end
+
+    defp _max([head | tail], current_max) when is_nil(current_max) do
+      _max(tail, head)
+    end
+
+    defp _max([head | tail], current_max) when head >= current_max do
+      _max(tail, head)
+    end
+
+    defp _max([head | tail], current_max) when head < current_max do
+      _max(tail, current_max)
+    end
+
 end
