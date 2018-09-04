@@ -4,9 +4,9 @@ defmodule TestStats1 do
     describe "Stats on lists of ints" do
         setup do
         [
-            list: [1, 3, 5, 7, 9, 11],
-            sum: 36,
-            count: 6
+            list:   [1, 3, 5, 7, 9, 11],
+            sum:    36,
+            count:  6
         ]
         end
     
